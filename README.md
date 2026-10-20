@@ -87,15 +87,6 @@ also in this repo. It provisions the same set of resources.
 
     ![Guestbook in browser](./imgs/guestbook.png)
 
-## Cleaning up
-
-Once you're finished experimenting, you can destroy your stack and remove it to avoid incurring any additional cost:
-
-```bash
-pulumi destroy
-pulumi stack rm
-```
-
 ## Monitoring (Prometheus + Grafana)
 
 The stack also deploys [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
@@ -132,3 +123,13 @@ kubectl -n monitoring port-forward svc/prometheus-operated 9090   # then open ht
 
 Import [`grafana/Guestbook-external.json`](./grafana/Guestbook-external.json) in Grafana:
 Dashboards → New → Import → upload the file → select the Prometheus data source.
+
+
+## Cleaning up
+
+Once you're finished experimenting, you can destroy your stack and remove it to avoid incurring any additional cost:
+
+```bash
+pulumi destroy
+pulumi stack rm
+```
