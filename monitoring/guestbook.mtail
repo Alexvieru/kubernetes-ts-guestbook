@@ -1,0 +1,9 @@
+# Counts requests by method and status code and records request latency from the Apache access log
+# written by monitoring/apache-vhost.conf.
+counter guestbook_http_requests_total by method, code
+histogram guestbook_http_request_duration_seconds by method buckets 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5
+
+/^(?P<method>[A-Z]+) (?P<code>\d{3}) (?P<usec>\d+)$/ {
+  guestbook_http_requests_total[$method][$code]++
+  guestbook_http_request_duration_seconds[$method] = float($usec) / 1000000.0
+}
