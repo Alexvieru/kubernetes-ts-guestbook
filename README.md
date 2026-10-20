@@ -16,6 +16,14 @@ also in this repo. It provisions the same set of resources.
 2. [Configure Kubernetes](https://www.pulumi.com/docs/intro/cloud-providers/kubernetes/setup/)
 3. [Install Node.js](https://www.pulumi.com/docs/intro/languages/javascript/)
 
+> _Note_: the Pulumi CLI version is pinned in [`.tool-versions`](./.tool-versions) and managed with
+> [asdf](https://asdf-vm.com/). Install that version with:
+>
+> ```bash
+> asdf plugin add pulumi https://github.com/canha/asdf-pulumi.git
+> asdf install
+> ```
+
 ## Deploying the example
 
 1.  Create a new stack:
